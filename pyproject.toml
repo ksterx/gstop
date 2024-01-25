@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gstop"
+description = "Generation Stopping Criteria for transformers Language Model"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "ksterx", email = "kostonerx@gmail.com"},
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "transformers",
+    "torch",
+]
+version = "0.1.1"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "flake8",
+    "mypy",
+    "black",
+    "isort",
+]
+
+[tool.setuptools.packages.find]
+exclude = ["tests"]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 88
+
+[tool.mypy]
+ignore_missing_imports = true
