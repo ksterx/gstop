@@ -1,8 +1,8 @@
-import json
-
 import torch
 from loguru import logger
 from transformers import StoppingCriteria, StoppingCriteriaList
+
+from .common import STOP_TOKENS_REGISTRY
 
 
 class GenerationStopper(StoppingCriteria):
@@ -54,11 +54,8 @@ class GenerationStopper(StoppingCriteria):
 
 
 class StopTokensRegistry:
-    REGISTRY_PATH = "stop_tokens.json"
-
     def __init__(self):
-        with open(self.REGISTRY_PATH, "r") as f:
-            self.registry = json.load(f)
+        self.registry = STOP_TOKENS_REGISTRY
 
     def get(self, model_name: str):
         if model_name in self.registry.keys():
@@ -76,10 +73,6 @@ class StopTokensRegistry:
 
     def remove(self, model_name: str, key: str):
         del self.registry[model_name][key]
-
-    def save(self):
-        with open(self.REGISTRY_PATH, "w") as f:
-            f.write(self.registry)
 
     def show(self):
         print(self.registry)
