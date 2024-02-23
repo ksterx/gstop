@@ -1,6 +1,6 @@
-from .stopper import GenerationStopper
+from .stopper import GenerationStopper, StopTokensRegistry
 
-__all__ = ["GenerationStopper", "STOP_TOKENS_REGISTERY"]
+__all__ = ["GenerationStopper", "STOP_TOKENS_REGISTERY", "StopTokensRegistry"]
 
 STOP_TOKENS_REGISTRY = {
     "mistral": {
@@ -12,5 +12,8 @@ STOP_TOKENS_REGISTRY = {
         "\nAssistant:": [13, 7226, 11143, 28747],
         "\nYou:": [13, 1976, 28747],
         "\nFollower:": [13, 28765, 793, 1072, 28747],
+        "\nAI:": [13, 11741, 28747],
+        "\nHuman": [13, 28769, 6366, 28747],
+        "\nBot:": [13, 25288, 28747],
     }
 }
