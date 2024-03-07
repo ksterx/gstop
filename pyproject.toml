@@ -16,6 +16,7 @@ classifiers = [
 dependencies = [
     "transformers",
     "torch",
+    "loguru",
 ]
 version = "0.2.1"
 
