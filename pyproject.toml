@@ -18,28 +18,20 @@ dependencies = [
     "torch",
     "loguru",
 ]
-version = "0.2.1"
+version = "0.2.3"
 
 [project.optional-dependencies]
 dev = [
     "pytest",
-    "flake8",
-    "mypy",
-    "black",
-    "isort",
+    "ruff",
 ]
 
 [tool.setuptools.packages.find]
 exclude = ["tests"]
 
-[tool.black]
+[tool.ruff]
 line-length = 88
+indent-width = 4
 
-[tool.isort]
-profile = "black"
-
-[tool.flake8]
-max-line-length = 88
-
-[tool.mypy]
-ignore_missing_imports = true
+[tool.ruff.format]
+quote-style = "double"
