@@ -1,4 +1,4 @@
-from .common import STOP_TOKENS_REGISTRY
+from .common import _DEFAULT_STOP_TOKENS_REGISTRY
 from .stopper import GenerationStopper, StopTokensRegistry
 
-__all__ = ["GenerationStopper", "STOP_TOKENS_REGISTRY", "StopTokensRegistry"]
+__all__ = ["GenerationStopper", "_DEFAULT_STOP_TOKENS_REGISTRY", "StopTokensRegistry"]

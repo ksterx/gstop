@@ -1,4 +1,4 @@
-STOP_TOKENS_REGISTRY = {
+_DEFAULT_STOP_TOKENS_REGISTRY = {
     "mistral": {
         "###": [[774], [27332]],
         "\n\n": [13, 13],

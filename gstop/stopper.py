@@ -2,7 +2,7 @@ import torch
 from loguru import logger
 from transformers import StoppingCriteria, StoppingCriteriaList
 
-from .common import STOP_TOKENS_REGISTRY
+from .common import _DEFAULT_STOP_TOKENS_REGISTRY
 
 
 class GenerationStopper(StoppingCriteria):
@@ -55,7 +55,7 @@ class GenerationStopper(StoppingCriteria):
 
 class StopTokensRegistry:
     def __init__(self):
-        self.registry = STOP_TOKENS_REGISTRY
+        self.registry: dict[str, dict] = _DEFAULT_STOP_TOKENS_REGISTRY
 
     def get(self, model_name: str):
         if model_name in self.registry.keys():
